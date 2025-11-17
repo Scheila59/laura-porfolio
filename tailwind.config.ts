@@ -16,11 +16,11 @@ const config: Config = {
           text: "#2D5016",
         },
         summer: {
-          primary: "#FF7F50",
-          secondary: "#4169E1",
-          accent: "#FF8C00",
-          background: "#F0F8FF",
-          text: "#1B4B82",
+          primary: "#ffa07a",
+          secondary: "#3cb371",
+          accent: "#FFD700",
+          background: "#FFF5E1",
+          text: "#2E2E2E",
         },
         autumn: {
           primary: "#DC143C",
@@ -32,7 +32,7 @@ const config: Config = {
         winter: {
           primary: "#9370DB",
           secondary: "#87CEEB",
-          accent: "#F5F5F5",
+          accent: "#5454A1   ",
           background: "#F0F8FF",
           text: "#2F2F4F",
         },
