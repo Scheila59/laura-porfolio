@@ -1,42 +1,35 @@
 "use client";
 
+import { useState } from "react";
 import { useTheme } from "@/hooks/useTheme";
-import SeasonSelector from "@/components/theme/SeasonSelector";
+import Hero from "@/components/sections/Hero";
+import SeasonWelcome from "@/components/sections/SeasonWelcome";
+
+function shouldShowWelcome(): boolean {
+  if (typeof window === "undefined") return true;
+  const hasVisited = localStorage.getItem("hasVisitedPortfolio");
+  return !hasVisited;
+}
 
 export default function Home() {
   const { theme } = useTheme();
+  const [showWelcome, setShowWelcome] = useState(shouldShowWelcome);
+
+  const handleSeasonSelected = () => {
+    localStorage.setItem("hasVisitedPortfolio", "true");
+    setShowWelcome(false);
+  };
 
   return (
     <main
-      className="min-h-screen p-8 transition-colors duration-500"
+      className="transition-colors duration-500"
       style={{ backgroundColor: theme.colors.background }}
     >
-      <div className="max-w-4xl mx-auto">
-        <h1
-          className="text-5xl font-bold text-center mb-4"
-          style={{ color: theme.colors.text }}
-        >
-          Portfolio de Laura Beaugrand
-        </h1>
-
-        <p
-          className="text-xl text-center mb-8"
-          style={{ color: theme.colors.text }}
-        >
-          Développeuse Full Stack
-        </p>
-
-        <SeasonSelector />
-
-        <div className="mt-12 text-center">
-          <p
-            className="text-2xl font-medium"
-            style={{ color: theme.colors.text }}
-          >
-            🎨 Thème actuel : {theme.name} {theme.icon}
-          </p>
-        </div>
-      </div>
+      {showWelcome ? (
+        <SeasonWelcome onSeasonSelected={handleSeasonSelected} />
+      ) : (
+        <Hero />
+      )}
     </main>
   );
 }

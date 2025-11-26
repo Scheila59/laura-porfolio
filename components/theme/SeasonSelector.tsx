@@ -16,7 +16,7 @@ export default function SeasonSelector() {
             key={key}
             onClick={() => setCurrentSeason(key as Season)}
             className={`
-              px-6 py-3 rounded-lg font-medium
+              px-8 py-4 rounded-lg font-medium
               transition-all duration-300
               ${
                 isActive
