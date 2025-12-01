@@ -2,12 +2,21 @@
 
 import { useTheme } from "@/hooks/useTheme";
 import SeasonSelector from "@/components/theme/SeasonSelector";
+import { useTypewriter } from "@/hooks/useTypewriter";
+import SeasonalParticles from "@/components/theme/SeasonalParticules";
 
 export default function Hero() {
-  const { theme } = useTheme();
+  const { theme, currentSeason } = useTheme();
+
+  const descriptionText = useTypewriter({
+    text: "Passionnée par la création d'expériences numériques élégantes et intuitives. Spécialisée en React, Next.js, Symfony et React Native.",
+    speed: 40,
+    delay: 3000,
+  });
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
+      <SeasonalParticles season={currentSeason} count={30} />
       <div className="max-w-4xl mx-auto text-center space-y-8">
         <h1
           className="text-5xl md:text-7xl font-bold mb-4 transition-colors duration-500"
@@ -17,18 +26,20 @@ export default function Hero() {
         </h1>
 
         <h2
-          className="text-2xl md:text-4xl font-medium mb-6 transition-colors duration-500"
+          className="text-2xl md:text-4xl font-medium mb-6 transition-colors duration-500 min-h-[3rem] md:min-h-[4rem]"
           style={{ color: theme.colors.text }}
         >
           Développeuse Full Stack
         </h2>
 
         <p
-          className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed transition-colors duration-500"
+          className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed transition-colors duration-500 min-h-[6rem] md:min-h-[5rem]"
           style={{ color: theme.colors.text }}
         >
-          Passionnée par la création d&apos;expériences numériques élégantes et
-          intuitives. Spécialisée en React, Next.js, Symfony et React Native.
+          {descriptionText.displayText}
+          {!descriptionText.isComplete && (
+            <span className="animate-pulse">|</span>
+          )}
         </p>
       </div>
       <div className="my-12">
