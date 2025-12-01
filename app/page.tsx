@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTheme } from "@/hooks/useTheme";
-import Hero from "@/components/sections/Hero";
-import SeasonWelcome from "@/components/sections/SeasonWelcome";
+import dynamic from "next/dynamic";
 
 function shouldShowWelcome(): boolean {
   if (typeof window === "undefined") return true;
@@ -11,8 +9,18 @@ function shouldShowWelcome(): boolean {
   return !hasVisited;
 }
 
+const Hero = dynamic(() => import("@/components/sections/Hero"), {
+  ssr: false,
+});
+
+const SeasonWelcome = dynamic(
+  () => import("@/components/sections/SeasonWelcome"),
+  {
+    ssr: false,
+  }
+);
+
 export default function Home() {
-  const { theme } = useTheme();
   const [showWelcome, setShowWelcome] = useState(shouldShowWelcome);
 
   const handleSeasonSelected = () => {
@@ -21,10 +29,7 @@ export default function Home() {
   };
 
   return (
-    <main
-      className="transition-colors duration-500"
-      style={{ backgroundColor: theme.colors.background }}
-    >
+    <main className="min-h-screen">
       {showWelcome ? (
         <SeasonWelcome onSeasonSelected={handleSeasonSelected} />
       ) : (
