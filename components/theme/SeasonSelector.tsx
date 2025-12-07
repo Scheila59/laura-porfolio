@@ -16,7 +16,7 @@ export default function SeasonSelector() {
             key={key}
             onClick={() => setCurrentSeason(key as Season)}
             className={`
-              px-8 py-4 rounded-lg font-medium
+              w-28 px-6 py-3 rounded-lg font-medium
               transition-all duration-300
               ${
                 isActive
@@ -29,7 +29,7 @@ export default function SeasonSelector() {
               color: theme.colors.text,
             }}
           >
-            <span className="text-2xl mr-2">{theme.icon}</span>
+            {/* <span className="text-2xl mr-2">{theme.icon}</span> */}
             {theme.name}
           </button>
         );

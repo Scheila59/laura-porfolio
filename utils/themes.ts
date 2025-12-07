@@ -6,6 +6,7 @@ export interface SeasonColors {
   accent: string;
   background: string;
   text: string;
+  card: string;
 }
 
 export interface SeasonTheme {
@@ -25,6 +26,7 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
       accent: "#FFD700",
       background: "#F0FFF0",
       text: "#2D5016",
+      card: "#FFFFFF",
     },
     particles: "petals",
   },
@@ -37,6 +39,7 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
       accent: "#FFD700",
       background: "#FFF5E1",
       text: "#2E2E2E",
+      card: "#FFFFFF",
     },
     particles: "bubbles",
   },
@@ -48,7 +51,8 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
       secondary: "#D2691E",
       accent: "#B8860B",
       background: "#FFF8DC",
-      text: "#8B4513",
+      text: "#6a040f",
+      card: "#FFFFFF",
     },
     particles: "leaves",
   },
@@ -61,6 +65,7 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
       accent: "#5454A1",
       background: "#F0F8FF",
       text: "#2F2F4F",
+      card: "#FFFFFF",
     },
     particles: "snowflakes",
   },
