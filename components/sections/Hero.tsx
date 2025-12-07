@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "@/hooks/useTheme";
-import SeasonSelector from "@/components/theme/SeasonSelector";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import SeasonalParticles from "@/components/theme/SeasonalParticules";
 
@@ -9,9 +8,9 @@ export default function Hero() {
   const { theme, currentSeason } = useTheme();
 
   const descriptionText = useTypewriter({
-    text: "Passionnée par la création d'expériences numériques élégantes et intuitives. Spécialisée en React, Next.js, Symfony et React Native.",
+    text: "Passionnée par la création d'interfaces élégantes et intuitives.\nSymfony • React Native • Next.js",
     speed: 40,
-    delay: 3000,
+    delay: 1000,
   });
 
   return (
@@ -33,7 +32,7 @@ export default function Hero() {
         </h2>
 
         <p
-          className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed transition-colors duration-500 min-h-[6rem] md:min-h-[5rem]"
+          className="whitespace-pre-line text-center text-lg md:text-xl max-w-2xl mx-auto leading-relaxed transition-colors duration-500 min-h-[6rem] md:min-h-[5rem]"
           style={{ color: theme.colors.text }}
         >
           {descriptionText.displayText}
@@ -42,9 +41,7 @@ export default function Hero() {
           )}
         </p>
       </div>
-      <div className="my-12">
-        <SeasonSelector />
-      </div>
+
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a
           href="#projets"

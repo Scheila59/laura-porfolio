@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Header from "@/components/sections/Header";
 import dynamic from "next/dynamic";
 
+const Projects = dynamic(() => import("@/components/sections/Projects"), {
+  ssr: false,
+});
 function shouldShowWelcome(): boolean {
   if (typeof window === "undefined") return true;
   const hasVisited = localStorage.getItem("hasVisitedPortfolio");
@@ -29,12 +33,18 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen">
-      {showWelcome ? (
-        <SeasonWelcome onSeasonSelected={handleSeasonSelected} />
-      ) : (
-        <Hero />
-      )}
-    </main>
+    <>
+      {!showWelcome && <Header />}
+      <main className="min-h-screen">
+        {showWelcome ? (
+          <SeasonWelcome onSeasonSelected={handleSeasonSelected} />
+        ) : (
+          <>
+            <Hero />
+            <Projects />
+          </>
+        )}
+      </main>
+    </>
   );
 }
