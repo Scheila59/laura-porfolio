@@ -14,6 +14,9 @@ export interface SeasonTheme {
   icon: string;
   colors: SeasonColors;
   particles: string;
+  backgroundImage: string;
+  gradient: string;
+  cardTexture: string;
 }
 
 export const seasonThemes: Record<Season, SeasonTheme> = {
@@ -21,41 +24,58 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
     name: "Printemps",
     icon: "🌸",
     colors: {
-      primary: "#FF69B4",
-      secondary: "#90EE90",
+      primary: "#E91E63",
+      secondary: "#4CAF50",
       accent: "#FFD700",
-      background: "#F0FFF0",
-      text: "#2D5016",
+      background: "#FFF0F5",
+      text: "#1B5E20",
       card: "#FFFFFF",
     },
     particles: "petals",
+    backgroundImage:
+      "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    gradient: "linear-gradient(135deg, #FFF0F5 0%, #D4F1D4 100%)",
+    cardTexture:
+      "url('https://www.toptal.com/designers/subtlepatterns/uploads/beige-tiles.png')",
   },
   summer: {
     name: "Été",
     icon: "☀️",
     colors: {
-      primary: "#ffa07a",
-      secondary: "#3cb371",
+      primary: "#FFA07A",
+      secondary: "#4ECDC4",
       accent: "#FFD700",
       background: "#FFF5E1",
-      text: "#2E2E2E",
+      text: "#2C3E50",
       card: "#FFFFFF",
     },
     particles: "bubbles",
+    backgroundImage:
+      "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    gradient:
+      "linear-gradient(135deg, #FFF4Dhttps://github.com/Scheila596 0%, #C5E1F5 100%)",
+    cardTexture: "url('/textures/naturalSand.jpg')",
   },
   autumn: {
     name: "Automne",
     icon: "🍂",
     colors: {
-      primary: "#DC143C",
-      secondary: "#D2691E",
+      primary: "#D2691E",
+      secondary: "#8B4513",
       accent: "#B8860B",
-      background: "#FFF8DC",
-      text: "#6a040f",
+      background: "#FFF8F0",
+      text: "#3E2723",
       card: "#FFFFFF",
     },
     particles: "leaves",
+    backgroundImage:
+      "https://images.pexels.com/photos/1496373/pexels-photo-1496373.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    gradient: "linear-gradient(135deg, #FFF0E0 0%, #FFD8A8 50%, #F5DEB3 100%)",
+    cardTexture:
+      "url('https://www.toptal.com/designers/subtlepatterns/uploads/light-veneer.png')",
+    // cardTexture: "url('/textures/wooden-texture.jpg')",
   },
+
   winter: {
     name: "Hiver",
     icon: "❄️",
@@ -68,5 +88,10 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
       card: "#FFFFFF",
     },
     particles: "snowflakes",
+    backgroundImage:
+      "https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    gradient: "linear-gradient(135deg, #EBF4FA 0%, #D5DEF5 100%)",
+    cardTexture:
+      "url('https://www.toptal.com/designers/subtlepatterns/uploads/nice_snow.png')",
   },
 };

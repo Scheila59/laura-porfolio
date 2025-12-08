@@ -16,20 +16,21 @@ export default function SeasonSelector() {
             key={key}
             onClick={() => setCurrentSeason(key as Season)}
             className={`
-              w-28 px-6 py-3 rounded-lg font-medium
-              transition-all duration-300
-              ${
-                isActive
-                  ? "scale-110 shadow-lg "
-                  : "hover:scale-105 opacity-70 hover:opacity-100"
-              }
-            `}
+    w-28 px-6 py-1 rounded-lg font-medium
+    transition-all duration-300
+    ${
+      isActive
+        ? "border-4"
+        : "hover:scale-105 opacity-60 hover:opacity-100 border-2"
+    }
+  `}
             style={{
-              backgroundColor: theme.colors.primary,
-              color: theme.colors.text,
+              backgroundColor: isActive ? theme.colors.primary : "transparent",
+              color: isActive ? theme.colors.background : theme.colors.text,
+              borderColor: theme.colors.primary,
+              backdropFilter: "blur(8px)",
             }}
           >
-            {/* <span className="text-2xl mr-2">{theme.icon}</span> */}
             {theme.name}
           </button>
         );

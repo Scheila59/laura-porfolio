@@ -63,7 +63,7 @@ export default function Projects() {
       ref={sectionRef}
       id="projets"
       className="min-h-screen py-20 px-4 transition-colors duration-500"
-      style={{ backgroundColor: theme.colors.background }}
+      style={{ background: theme.gradient }}
     >
       <div className="max-w-6xl mx-auto">
         <h2
@@ -86,15 +86,18 @@ export default function Projects() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
               style={{
-                backgroundColor: theme.colors.card,
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
                 borderColor: theme.colors.primary,
                 border: "2px solid",
+                backgroundImage: `${theme.cardTexture}, linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85))`,
+                backgroundSize: "auto, cover",
+                backgroundRepeat: "repeat, no-repeat",
               }}
             >
               <div className="p-6">
                 <h3
                   className="text-2xl font-bold mb-3"
-                  style={{ color: theme.colors.secondary }}
+                  style={{ color: theme.colors.primary }}
                 >
                   {project.title}
                 </h3>

@@ -7,6 +7,9 @@ import dynamic from "next/dynamic";
 const Projects = dynamic(() => import("@/components/sections/Projects"), {
   ssr: false,
 });
+const Contact = dynamic(() => import("@/components/sections/Contact"), {
+  ssr: false,
+});
 function shouldShowWelcome(): boolean {
   if (typeof window === "undefined") return true;
   const hasVisited = localStorage.getItem("hasVisitedPortfolio");
@@ -42,6 +45,7 @@ export default function Home() {
           <>
             <Hero />
             <Projects />
+            <Contact />
           </>
         )}
       </main>
