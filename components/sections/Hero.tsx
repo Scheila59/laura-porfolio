@@ -3,6 +3,7 @@
 import { useTheme } from "@/hooks/useTheme";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import SeasonalParticles from "@/components/theme/SeasonalParticules";
+import NavigationLink from "../ui/NavigationLink";
 
 export default function Hero() {
   const { theme, currentSeason } = useTheme();
@@ -14,9 +15,29 @@ export default function Hero() {
   });
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
-      <SeasonalParticles season={currentSeason} count={30} />
-      <div className="max-w-4xl mx-auto text-center space-y-8">
+    <section
+      className="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative"
+      style={{ backgroundColor: theme.colors.background }}
+    >
+      {/* Image de fond avec opacité */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${theme.backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          opacity: 0.2,
+        }}
+      />
+
+      {/* Particules */}
+      <div className="absolute inset-0 z-5">
+        <SeasonalParticles season={currentSeason} count={30} />
+      </div>
+
+      {/* Contenu principal */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         <h1
           className="text-5xl md:text-7xl font-bold mb-4 transition-colors duration-500"
           style={{ color: theme.colors.primary }}
@@ -40,29 +61,29 @@ export default function Hero() {
             <span className="animate-pulse">|</span>
           )}
         </p>
-      </div>
 
-      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a
-          href="#projets"
-          className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-          style={{
-            backgroundColor: theme.colors.primary,
-            color: theme.colors.background,
-          }}
-        >
-          Voir mes projets
-        </a>
-        <a
-          href="#contact"
-          className="px-8 py-4 rounded-lg font-semibold text-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-xl"
-          style={{
-            borderColor: theme.colors.primary,
-            color: theme.colors.primary,
-          }}
-        >
-          Me contacter
-        </a>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <NavigationLink
+            href="#projets"
+            className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            style={{
+              backgroundColor: theme.colors.primary,
+              color: theme.colors.background,
+            }}
+          >
+            Voir mes projets
+          </NavigationLink>
+          <NavigationLink
+            href="#contact"
+            className="px-8 py-4 rounded-lg font-semibold text-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            style={{
+              borderColor: theme.colors.primary,
+              color: theme.colors.primary,
+            }}
+          >
+            Me contacter
+          </NavigationLink>
+        </div>
       </div>
     </section>
   );
