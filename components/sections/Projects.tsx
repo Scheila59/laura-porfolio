@@ -89,7 +89,7 @@ export default function Projects() {
                 backgroundColor: "rgba(255, 255, 255, 0.95)",
                 borderColor: theme.colors.primary,
                 border: "2px solid",
-                backgroundImage: `${theme.cardTexture}, linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85))`,
+                backgroundImage: `${theme.cardTexture}, linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92))`,
                 backgroundSize: "auto, cover",
                 backgroundRepeat: "repeat, no-repeat",
               }}

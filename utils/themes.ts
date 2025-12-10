@@ -42,18 +42,17 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
     name: "Été",
     icon: "☀️",
     colors: {
-      primary: "#FFA07A",
-      secondary: "#4ECDC4",
-      accent: "#FFD700",
-      background: "#FFF5E1",
-      text: "#2C3E50",
+      primary: "#00CED1", // Turquoise (parfait !)
+      secondary: "#FFB74D", // Orange sable (complémentaire du turquoise)
+      accent: "#FFF176", // Jaune soleil (plus doux que le doré)
+      background: "#F0F8FF", // Bleu très pâle (Alice Blue)
+      text: "#1A237E", // Bleu marine foncé (meilleur contraste)
       card: "#FFFFFF",
     },
     particles: "bubbles",
     backgroundImage:
       "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    gradient:
-      "linear-gradient(135deg, #FFF4Dhttps://github.com/Scheila596 0%, #C5E1F5 100%)",
+    gradient: "linear-gradient(135deg, #E1F5FE 0%, #FFF8E1 50%, #B2EBF2 100%)", // Bleu clair → Sable → Turquoise pâle
     cardTexture: "url('/textures/naturalSand.jpg')",
   },
   autumn: {
