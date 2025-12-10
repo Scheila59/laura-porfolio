@@ -23,6 +23,9 @@ const SeasonWelcome = dynamic(
     ssr: false,
   }
 );
+const Footer = dynamic(() => import("@/components/sections/Footer"), {
+  ssr: false,
+});
 
 function shouldShowWelcome(): boolean {
   if (typeof window === "undefined") return true;
@@ -75,6 +78,7 @@ export default function Home() {
               }}
             />
             <Contact />
+            <Footer />
           </>
         )}
       </main>
