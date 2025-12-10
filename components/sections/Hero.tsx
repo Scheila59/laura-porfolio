@@ -2,11 +2,10 @@
 
 import { useTheme } from "@/hooks/useTheme";
 import { useTypewriter } from "@/hooks/useTypewriter";
-import SeasonalParticles from "@/components/theme/SeasonalParticules";
 import NavigationLink from "../ui/NavigationLink";
 
 export default function Hero() {
-  const { theme, currentSeason } = useTheme();
+  const { theme } = useTheme();
 
   const descriptionText = useTypewriter({
     text: "Passionnée par la création d'interfaces élégantes et intuitives.\nSymfony • React Native • Next.js",
@@ -30,11 +29,6 @@ export default function Hero() {
           opacity: 0.2,
         }}
       />
-
-      {/* Particules */}
-      <div className="absolute inset-0 z-5">
-        <SeasonalParticles season={currentSeason} count={30} />
-      </div>
 
       {/* Contenu principal */}
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">

@@ -4,7 +4,7 @@ import { useTheme } from "@/hooks/useTheme";
 import { seasonThemes, Season } from "@/utils/themes";
 import { useState, useEffect } from "react";
 import { useTypewriter } from "@/hooks/useTypewriter";
-import SeasonalParticles from "@/components/theme/SeasonalParticules";
+import SeasonalParticles from "@/components/theme/SeasonalParticles";
 
 interface SeasonWelcomeProps {
   onSeasonSelected: () => void;

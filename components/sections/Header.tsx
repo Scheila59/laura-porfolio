@@ -106,6 +106,15 @@ export default function Header() {
           onClick={() => setIsMenuOpen(false)}
         />
       )}
+
+      {/* ligne separatrice  */}
+      <div
+        className="h-0.5 w-full"
+        style={{
+          background: `linear-gradient(90deg, transparent 0%, ${theme.colors.primary} 50%, transparent 100%)`,
+          opacity: 0.5,
+        }}
+      />
     </header>
   );
 }
