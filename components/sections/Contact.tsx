@@ -16,7 +16,7 @@ export default function Contact() {
     {
       name: "LinkedIn",
       icon: FaLinkedin,
-      link: "www.linkedin.com/in/laura-beaugrand",
+      link: "https://www.linkedin.com/in/laura-beaugrand",
       label: "Laura Beaugrand",
     },
     {

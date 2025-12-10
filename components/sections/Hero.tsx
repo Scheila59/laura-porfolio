@@ -69,10 +69,11 @@ export default function Hero() {
           </NavigationLink>
           <NavigationLink
             href="#contact"
-            className="px-8 py-4 rounded-lg font-semibold text-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            className="px-8 py-4 rounded-lg border-2 transition-all duration-300 hover:scale-105"
             style={{
-              borderColor: theme.colors.primary,
-              color: theme.colors.primary,
+              borderColor: theme.colors.primary, // Reste en primary (plus visible)
+              color: theme.colors.text, // Texte contrasté
+              backgroundColor: "rgba(255, 255, 255, 0.15)",
             }}
           >
             Me contacter
