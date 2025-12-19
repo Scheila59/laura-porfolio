@@ -26,7 +26,7 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
     colors: {
       primary: "#E91E63",
       secondary: "#4CAF50",
-      accent: "#FFD700",
+      accent: "#C2185B",
       background: "#FFF0F5",
       text: "#1B5E20",
       card: "#FFFFFF",
@@ -36,17 +36,18 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
       "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&w=1920",
     gradient: "linear-gradient(135deg, #FFF0F5 0%, #D4F1D4 100%)",
     cardTexture:
-      "url('https://www.toptal.com/designers/subtlepatterns/uploads/beige-tiles.png')",
+      // "url('https://www.toptal.com/designers/subtlepatterns/uploads/beige-tiles.png')",
+      "url('/textures/beige-tiles.webp')",
   },
   summer: {
     name: "Été",
     icon: "☀️",
     colors: {
-      primary: "#00CED1", // Turquoise (parfait !)
-      secondary: "#FFB74D", // Orange sable (complémentaire du turquoise)
-      accent: "#FFF176", // Jaune soleil (plus doux que le doré)
-      background: "#F0F8FF", // Bleu très pâle (Alice Blue)
-      text: "#1A237E", // Bleu marine foncé (meilleur contraste)
+      primary: "#00CED1",
+      secondary: "#FFB74D",
+      accent: "#FF6B35",
+      background: "#F0F8FF",
+      text: "#1A237E",
       card: "#FFFFFF",
     },
     particles: "bubbles",
@@ -71,8 +72,8 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
       "https://images.pexels.com/photos/1496373/pexels-photo-1496373.jpeg?auto=compress&cs=tinysrgb&w=1920",
     gradient: "linear-gradient(135deg, #FFF0E0 0%, #FFD8A8 50%, #F5DEB3 100%)",
     cardTexture:
-      "url('https://www.toptal.com/designers/subtlepatterns/uploads/light-veneer.png')",
-    // cardTexture: "url('/textures/wooden-texture.jpg')",
+      // "url('https://www.toptal.com/designers/subtlepatterns/uploads/light-veneer.png')",
+      "url('textures/light-veneer.webp')",
   },
 
   winter: {
@@ -90,6 +91,7 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
     backgroundImage:
       "https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&w=1920",
     gradient: "linear-gradient(135deg, #EBF4FA 0%, #D5DEF5 100%)",
+    // gradient: "linear-gradient(135deg, #E3F2FD 0%, #D1E3F5 50%, #C5D9F0 100%)",
     cardTexture:
       "url('https://www.toptal.com/designers/subtlepatterns/uploads/nice_snow.png')",
   },

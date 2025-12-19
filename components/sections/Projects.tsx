@@ -87,7 +87,7 @@ export default function Projects() {
               className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.95)",
-                borderColor: theme.colors.primary,
+                borderColor: theme.colors.secondary,
                 border: "2px solid",
                 backgroundImage: `${theme.cardTexture}, linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92))`,
                 backgroundSize: "auto, cover",
