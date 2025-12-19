@@ -14,6 +14,9 @@ const Projects = dynamic(() => import("@/components/sections/Projects"), {
 const Contact = dynamic(() => import("@/components/sections/Contact"), {
   ssr: false,
 });
+const About = dynamic(() => import("@/components/sections/About"), {
+  ssr: false,
+});
 const Hero = dynamic(() => import("@/components/sections/Hero"), {
   ssr: false,
 });
@@ -62,6 +65,14 @@ export default function Home() {
         ) : (
           <>
             <Hero />
+            <div
+              className="h-0.5 w-full"
+              style={{
+                background: `linear-gradient(90deg, transparent 0%, ${currentTheme.colors.primary} 50%, transparent 100%)`,
+                opacity: 0.5,
+              }}
+            />
+            <About />
             <div
               className="h-0.5 w-full"
               style={{

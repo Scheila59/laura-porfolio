@@ -100,13 +100,15 @@ export default function SeasonWelcome({
             >
               Choisis celle qui te correspond le mieux, elle personnalisera ton
               expérience <br /> (
-              <span
-                className="font-bold"
-                style={{ color: displayTheme.colors.primary }}
-              >
-                survole
-              </span>{" "}
-              pour prévisualiser,{" "}
+              <span className="hidden md:inline">
+                <span
+                  className="font-bold"
+                  style={{ color: displayTheme.colors.primary }}
+                >
+                  survole
+                </span>{" "}
+                pour prévisualiser,{" "}
+              </span>
               <span
                 className="font-bold"
                 style={{ color: displayTheme.colors.primary }}
@@ -137,7 +139,7 @@ export default function SeasonWelcome({
                     onMouseLeave={() => setPreviewSeason(null)}
                     className={`
                   group relative overflow-hidden
-                  p-8 lg:p-6 rounded-2xl
+                  p-6 lg:p-6 rounded-2xl
                   transition-all duration-500
                   ${
                     isSelected
