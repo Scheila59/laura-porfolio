@@ -27,9 +27,8 @@ export default function About() {
           viewport={{ once: true }}
           className="rounded-xl p-8 mb-12 shadow-lg"
           style={{
-            backgroundColor: "rgba(255, 255, 255, 0.95)",
-            borderColor: theme.colors.primary,
-            border: "2px solid",
+            backgroundColor: "rgba(255, 255, 255, 0.85)",
+            boxShadow: `0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px ${theme.colors.primary}15`,
           }}
         >
           <h3
@@ -64,6 +63,14 @@ export default function About() {
               guider l&apos;utilisateur... Je crée des interfaces où chaque
               nuance a un sens.
             </p>
+            <p>
+              <strong>Organisation et méthode :</strong> J&apos;utilise{" "}
+              <strong style={{ color: theme.colors.primary }}>Notion</strong>{" "}
+              comme hub central pour tous mes projets : tableaux Kanban,
+              documentation technique, veille techno, et centralisation des
+              ressources. Cette approche structurée me permet de rester efficace
+              et de retrouver facilement toute information nécessaire.
+            </p>
           </div>
         </motion.div>
         {/* Compétences */}
@@ -76,9 +83,8 @@ export default function About() {
             viewport={{ once: true }}
             className="rounded-xl p-6 shadow-lg"
             style={{
-              backgroundColor: "rgba(255, 255, 255, 0.95)",
-              borderColor: theme.colors.primary,
-              border: "2px solid",
+              backgroundColor: "rgba(255, 255, 255, 0.65)",
+              boxShadow: `0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px ${theme.colors.primary}15`,
             }}
           >
             <h4
@@ -120,9 +126,8 @@ export default function About() {
             viewport={{ once: true }}
             className="rounded-xl p-6 shadow-lg"
             style={{
-              backgroundColor: "rgba(255, 255, 255, 0.95)",
-              borderColor: theme.colors.primary,
-              border: "2px solid",
+              backgroundColor: "rgba(255, 255, 255, 0.65)",
+              boxShadow: `0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px ${theme.colors.primary}15`,
             }}
           >
             <h4
@@ -157,9 +162,8 @@ export default function About() {
             viewport={{ once: true }}
             className="rounded-xl p-6 shadow-lg"
             style={{
-              backgroundColor: "rgba(255, 255, 255, 0.95)",
-              borderColor: theme.colors.primary,
-              border: "2px solid",
+              backgroundColor: "rgba(255, 255, 255, 0.65)",
+              boxShadow: `0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px ${theme.colors.primary}15`,
             }}
           >
             <h4
@@ -169,18 +173,20 @@ export default function About() {
               Outils & Design
             </h4>
             <div className="flex flex-wrap gap-2">
-              {["Figma", "Docker", "DBeaver", "Postman"].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 rounded-full text-sm font-medium"
-                  style={{
-                    backgroundColor: theme.colors.accent + "20",
-                    color: theme.colors.accent,
-                  }}
-                >
-                  {skill}
-                </span>
-              ))}
+              {["Figma", "Docker", "DBeaver", "Postman", "Notion"].map(
+                (skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 rounded-full text-sm font-medium"
+                    style={{
+                      backgroundColor: theme.colors.accent + "20",
+                      color: theme.colors.accent,
+                    }}
+                  >
+                    {skill}
+                  </span>
+                )
+              )}
             </div>
           </motion.div>
         </div>

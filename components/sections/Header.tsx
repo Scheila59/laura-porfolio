@@ -78,6 +78,7 @@ export default function Header() {
       </div>
 
       {/* Menu mobile */}
+
       <div
         className={`fixed top-0  right-0 h-full w-64 z-40 
         transform transition-transform duration-300 ease-in-out
@@ -85,6 +86,14 @@ export default function Header() {
         ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
         style={{ backgroundColor: theme.colors.card }}
       >
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="absolute top-4 right-4 p-2 transition-colors duration-300 hover:opacity-70"
+          style={{ color: theme.colors.primary }}
+          aria-label="Fermer le menu"
+        >
+          <FaTimes size={24} />
+        </button>
         <div className="flex flex-col h-full pt-20 px-6 space-y-8">
           <nav className="flex flex-col space-y-6">
             <NavigationLink
@@ -125,7 +134,7 @@ export default function Header() {
           </nav>
           <div
             className="pt-6 border-t"
-            style={{ borderColor: theme.colors.secondary }}
+            style={{ borderColor: theme.colors.accent }}
           >
             <p
               className="text-sm mb-4 opacity-70"

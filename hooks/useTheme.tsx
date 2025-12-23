@@ -26,30 +26,37 @@ function getCurrentSeason(): Season {
   return "winter"; // décembre, janvier, février
 }
 
-function getInitialSeason(): Season {
-  if (typeof window === "undefined") return "spring";
-
-  const saved = localStorage.getItem("selectedSeason");
-  if (
-    saved &&
-    (saved === "spring" ||
-      saved === "summer" ||
-      saved === "autumn" ||
-      saved === "winter")
-  ) {
-    return saved as Season;
-  }
-  return getCurrentSeason(); // si pas de préférence, on utilise la saison actuelle
-}
-
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [currentSeason, setCurrentSeason] = useState<Season>(
-    getInitialSeason()
-  );
+  const [currentSeason, setCurrentSeason] = useState<Season>("spring"); // Défaut serveur
+  const [mounted, setMounted] = useState(false);
 
+  // Hydratation côté client
   useEffect(() => {
-    localStorage.setItem("selectedSeason", currentSeason);
-  }, [currentSeason]);
+    const initializeSeason = () => {
+      const saved = localStorage.getItem("selectedSeason");
+      if (
+        saved &&
+        (saved === "spring" ||
+          saved === "summer" ||
+          saved === "autumn" ||
+          saved === "winter")
+      ) {
+        setCurrentSeason(saved as Season);
+      } else {
+        setCurrentSeason(getCurrentSeason());
+      }
+      setMounted(true);
+    };
+
+    initializeSeason();
+  }, []);
+
+  // Sauvegarde lors du changement
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem("selectedSeason", currentSeason);
+    }
+  }, [currentSeason, mounted]);
 
   const theme = seasonThemes[currentSeason];
 
