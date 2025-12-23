@@ -53,8 +53,9 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
     particles: "bubbles",
     backgroundImage:
       "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    gradient: "linear-gradient(135deg, #E1F5FE 0%, #FFF8E1 50%, #B2EBF2 100%)", // Bleu clair → Sable → Turquoise pâle
-    cardTexture: "url('/textures/naturalSand.jpg')",
+    gradient: "linear-gradient(135deg, #E1F5FE 0%, #FFF8E1 50%, #B2EBF2 100%)",
+    cardTexture:
+      "linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/textures/sand-beach.jpg')",
   },
   autumn: {
     name: "Automne",
@@ -92,7 +93,6 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
       "https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&w=1920",
     gradient: "linear-gradient(135deg, #EBF4FA 0%, #D5DEF5 100%)",
     // gradient: "linear-gradient(135deg, #E3F2FD 0%, #D1E3F5 50%, #C5D9F0 100%)",
-    cardTexture:
-      "url('https://www.toptal.com/designers/subtlepatterns/uploads/nice_snow.png')",
+    cardTexture: "url('textures/nice_snow.webp')",
   },
 };

@@ -3,32 +3,57 @@
 import { useTheme } from "@/hooks/useTheme";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const projects = [
   {
     id: 1,
     title: "AMG Location -Site de location d'engins",
+    slug: "amg",
     description:
-      "Plateforme complète de location avec gestion de back-office, système de catalogue, et base de données.",
-    technologies: ["Symfony", "PHP", "TWIG", "MySQL"],
+      "Mon premier projet fullstack en autonomie ! Plateforme de location d'engins développée de A à Z : du design Figma au déploiement Docker, en passant par l'architecture BDD et le back-office complet.",
+    technologies: [
+      "Symfony",
+      "PHP",
+      "Twig",
+      "MariaDB",
+      "Docker",
+      "Figma",
+      "Notion",
+    ],
     image: "/projects/engins.jpg", // TODO: changer l'image
     link: "https://github.com/Scheila59",
   },
   {
     id: 2,
     title: "Application mobile de gestion de session de travail",
+    slug: "app-mobile",
     description:
       "Application mobile développée en React Native avec API Symfony pour la gestion multi-applications.",
-    technologies: ["React Native", "Symfony API", "TypeScript", "Expo"],
+    technologies: [
+      "React Native",
+      "Symfony API",
+      "TypeScript",
+      "Expo",
+      "Figma",
+      "Notion",
+    ],
     image: "/projects/engins.jpg", // TODO: changer l'image
     link: "https://github.com/Scheila59",
   },
   {
     id: 3,
     title: "Portfolio Personnel",
+    slug: "portfolio",
     description:
       "Portfolio interactif avec système de thèmes saisonniers et animations fluides.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Notion",
+    ],
     image: "/projects/portfolio.jpg", // TODO: changer l'image
     link: "https://github.com/Scheila59",
   },
@@ -84,17 +109,17 @@ export default function Projects() {
                   : { opacity: 0, y: 100 }
               }
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.95)",
-                borderColor: theme.colors.secondary,
-                border: "2px solid",
-                backgroundImage: `${theme.cardTexture}, linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92))`,
+                border: `2px solid ${theme.colors.secondary}`,
+                backgroundImage: `${theme.cardTexture} `,
                 backgroundSize: "auto, cover",
                 backgroundRepeat: "repeat, no-repeat",
+                minHeight: "400px",
               }}
             >
-              <div className="p-6">
+              <div className="p-6 flex flex-col h-full">
                 <h3
                   className="text-2xl font-bold mb-3"
                   style={{ color: theme.colors.primary }}
@@ -123,18 +148,19 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
-                  style={{
-                    backgroundColor: theme.colors.primary,
-                    color: theme.colors.background,
-                  }}
-                >
-                  Voir sur GitHub
-                </a>
+                <div className="mt-auto">
+                  <Link href={`/projects/${project.slug}`}>
+                    <button
+                      className="inline-block px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105 w-full text-center"
+                      style={{
+                        backgroundColor: theme.colors.primary,
+                        color: theme.colors.background,
+                      }}
+                    >
+                      En savoir plus
+                    </button>
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

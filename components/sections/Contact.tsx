@@ -61,9 +61,8 @@ export default function Contact() {
                 className="flex items-center gap-4 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl w-full md:w-auto"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.95)", // Blanc semi-transparent
-                  borderColor: theme.colors.secondary,
-                  border: "2px solid",
-                  backgroundImage: `${theme.cardTexture}, linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92))`,
+                  border: `2px solid ${theme.colors.secondary}`,
+                  backgroundImage: `${theme.cardTexture}`,
                   backgroundSize: "auto, cover",
                   backgroundRepeat: "repeat, no-repeat",
                 }}
