@@ -1,36 +1,156 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 Portfolio Laura Beaugrand
 
-## Getting Started
+Portfolio interactif avec système de thèmes saisonniers développé avec Next.js 14, TypeScript et Tailwind CSS.
 
-First, run the development server:
+![Portfolio Preview](./public/og-image.jpg)
+
+## ✨ Fonctionnalités
+
+- 🌸☀️🍂❄️ **Système de thèmes saisonniers** : 4 palettes de couleurs complètes avec dégradés et textures uniques
+- 🎭 **Particules animées** : Pétales, bulles, feuilles et flocons générés dynamiquement en SVG
+- ⚡ **Animations fluides** : Transitions avec Framer Motion et IntersectionObserver
+- 📱 **Design responsive** : Optimisé pour mobile, tablette et desktop
+- 🎯 **Navigation intelligente** : Scroll automatique vers les sections
+- 💾 **Persistance du thème** : Le thème choisi est sauvegardé dans le localStorage
+- 📊 **SEO optimisé** : Metadata complètes, Open Graph, Twitter Cards
+- 📈 **Analytics intégré** : Google Tag Manager pour le suivi des visiteurs
+
+## 🛠️ Stack Technique
+
+### Frontend
+
+- **Framework** : Next.js 14 (App Router)
+- **Language** : TypeScript
+- **Styling** : Tailwind CSS
+- **Animations** : Framer Motion
+- **Icons** : React Icons
+
+### Architecture
+
+- **State Management** : React Context API
+- **Storage** : localStorage
+- **Hooks personnalisés** : useTheme
+- **Composants** : Séparation Client/Server Components
+
+### SEO & Analytics
+
+- **Metadata** : Next.js Metadata API
+- **Analytics** : Google Tag Manager
+- **Images OG** : Optimisées pour réseaux sociaux
+
+## 🚀 Installation
 
 ```bash
+# Clone le repository
+git clone https://github.com/Scheila59/laura-porfolio.git
+
+# Installe les dépendances
+npm install
+
+# Lance le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvre [http://localhost:3000](http://localhost:3000) dans ton navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Structure du Projet
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+laura-portfolio/
+├── app/
+│   ├── layout.tsx           # Layout global avec metadata
+│   ├── page.tsx             # Page d'accueil
+│   └── projects/            # Pages détaillées des projets
+│       ├── amg/
+│       ├── app-mobile-secret/
+│       └── portfolio/
+├── components/
+│   ├── sections/            # Sections de la page d'accueil
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Projects.tsx
+│   │   └── Contact.tsx
+│   ├── theme/               # Composants de thème
+│   │   ├── SeasonalParticles.tsx
+│   │   └── ThemeSelector.tsx
+│   └── layout/              # Composants de layout
+│       ├── Header.tsx
+│       └── Footer.tsx
+├── hooks/
+│   └── useTheme.tsx         # Hook pour gestion des thèmes
+├── utils/
+│   └── themes.ts            # Configuration des thèmes saisonniers
+└── public/
+    ├── og-image.jpg         # Image Open Graph
+    ├── favicon.ico          # Favicon
+    └── textures/            # Textures des saisons
+    └── videos/              # Vidéos des projets
+```
 
-## Learn More
+## 🎨 Système de Thèmes Saisonniers
 
-To learn more about Next.js, take a look at the following resources:
+### Sélection initiale
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+À la première visite, une page **SeasonWelcome** permet au visiteur de choisir sa saison préférée parmi :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Printemps 🌸
 
-## Deploy on Vercel
+- Couleurs : Rose, Corail, Pêche
+- Particules : Pétales de fleurs
+- Ambiance : Douce et fleurie
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Été ☀️
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Couleurs : Turquoise, Jaune, Orange
+- Particules : Bulles
+- Ambiance : Lumineuse et estivale
+
+### Automne 🍂
+
+- Couleurs : Orange, Marron, Terre
+- Particules : Feuilles tombantes
+- Ambiance : Chaleureuse et automnale
+
+### Hiver ❄️
+
+- Couleurs : Bleu glacier, Blanc, Violet
+- Particules : Flocons de neige
+- Ambiance : Froide et enneigée
+
+Le thème choisi est sauvegardé et peut être changé à tout moment via le sélecteur de saison.
+
+## 📱 Projets Présentés
+
+### AMG Location
+
+Plateforme de location d'engins développée avec Symfony, Docker et MariaDB. Premier projet fullstack complet.
+
+### Application Mobile
+
+Application React Native avec API Symfony centralisée. Architecture multi-applications avec JWT.
+
+### Portfolio Personnel
+
+Ce portfolio ! Projet méta auto-référentiel avec Next.js 14 et animations avancées.
+
+## 🚢 Déploiement
+
+Le site est déployé sur Vercel :
+
+👉 **[Voir le site en ligne](#)** _(À ajouter après déploiement)_
+
+## 📄 Licence
+
+Ce projet est sous licence MIT.
+
+## 📧 Contact
+
+**Laura Beaugrand** - Développeuse Web Full-Stack
+
+- LinkedIn : [laura-beaugrand](https://www.linkedin.com/in/laura-beaugrand/)
+- Email : l.beaugrand@hotmail.com
+- GitHub : [@Scheila59](https://github.com/Scheila59)
+
+---
+
+⭐ N'hésitez pas à explorer le code et à me contacter pour des échanges techniques !
