@@ -456,7 +456,7 @@ export default function AMGProject() {
             }}
           >
             <FaGithub size={24} />
-            <span>Voir sur GitHub</span>
+            <span>Voir mon profil GitHub</span>
           </a>
           {/* Bouton Retour */}
           <Link href="/#projets">
