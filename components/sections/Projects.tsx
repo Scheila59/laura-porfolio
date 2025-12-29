@@ -8,10 +8,10 @@ import Link from "next/link";
 const projects = [
   {
     id: 1,
-    title: "AMG Location -Site de location d'engins",
+    title: "AMG Location - Site de location d'engins",
     slug: "amg",
     description:
-      "Mon premier projet fullstack en autonomie ! Plateforme de location d'engins développée de A à Z : du design Figma au déploiement Docker, en passant par l'architecture BDD et le back-office complet.",
+      "Mon premier projet fullstack en autonomie !\n\nPlateforme de location d'engins développée de A à Z : du design Figma au déploiement Docker, en passant par l'architecture BDD et le back-office complet.",
     technologies: [
       "Symfony",
       "PHP",
@@ -19,26 +19,27 @@ const projects = [
       "MariaDB",
       "Docker",
       "Figma",
-      "Notion",
+      "DBeaver",
     ],
-    image: "/projects/engins.jpg", // TODO: changer l'image
+    image: "/projects/engins.jpg",
     link: "https://github.com/Scheila59",
   },
   {
     id: 2,
     title: "Application mobile de gestion de session de travail",
-    slug: "app-mobile",
+    slug: "app-mobile-secret",
     description:
       "Application mobile développée en React Native avec API Symfony pour la gestion multi-applications.",
     technologies: [
       "React Native",
-      "Symfony API",
       "TypeScript",
+      "Symfony",
+      "MySQL",
       "Expo",
       "Figma",
-      "Notion",
+      "DBeaver",
     ],
-    image: "/projects/engins.jpg", // TODO: changer l'image
+    image: "/projects/engins.jpg",
     link: "https://github.com/Scheila59",
   },
   {
@@ -119,7 +120,7 @@ export default function Projects() {
                 minHeight: "400px",
               }}
             >
-              <div className="p-6 flex flex-col h-full">
+              <div className="p-5 flex flex-col h-full">
                 <h3
                   className="text-2xl font-bold mb-3"
                   style={{ color: theme.colors.primary }}
