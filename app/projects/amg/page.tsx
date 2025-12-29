@@ -423,18 +423,19 @@ export default function AMGProject() {
           </div>
         </motion.div>
 
-        {/* Lien GitHub */}
+        {/* Boutons d'action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex justify-center"
+          className="flex flex-col sm:flex-row justify-center gap-4"
         >
+          {/* Bouton GitHub */}
           <a
             href="https://github.com/Scheila59"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105"
+            className="flex items-center justify-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105"
             style={{
               backgroundColor: theme.colors.primary,
               color: theme.colors.background,
@@ -444,16 +445,9 @@ export default function AMGProject() {
             <FaGithub size={24} />
             <span>Voir sur GitHub</span>
           </a>
-        </motion.div>
-        {/* Bouton retour en bas */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2 }}
-          className="flex justify-center mt-12"
-        >
+          {/* Bouton Retour */}
           <Link href="/#projets">
-            <motion.button
+            <button
               onClick={() => {
                 router.push("/#projets");
                 setTimeout(() => {
@@ -462,7 +456,7 @@ export default function AMGProject() {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }, 100);
               }}
-              className="flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="flex items-center justify-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.85)",
                 border: `2px solid ${theme.colors.primary}`,
@@ -472,7 +466,7 @@ export default function AMGProject() {
             >
               <FaArrowLeft />
               <span>Retour aux projets</span>
-            </motion.button>
+            </button>
           </Link>
         </motion.div>
       </div>

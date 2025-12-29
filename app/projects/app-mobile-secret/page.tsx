@@ -553,15 +553,16 @@ export default function AppMobilePage() {
           </div>
         </motion.div>
 
-        {/* Badge Code Privé */}
+        {/* Boutons d'action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.8 }}
-          className="flex justify-center"
+          className="flex flex-col sm:flex-row justify-center gap-4"
         >
+          {/* Badge Code Privé */}
           <div
-            className="flex items-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg"
+            className="flex items-center justify-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg"
             style={{
               backgroundColor: "rgba(100, 100, 100, 0.1)",
               color: theme.colors.text,
@@ -571,16 +572,10 @@ export default function AppMobilePage() {
             <FaLock size={20} />
             <span>Code source confidentiel</span>
           </div>
-        </motion.div>
-        {/* Bouton retour en bas */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2 }}
-          className="flex justify-center mt-12"
-        >
+
+          {/* Bouton Retour */}
           <Link href="/#projets">
-            <motion.button
+            <button
               onClick={() => {
                 router.push("/#projets");
                 setTimeout(() => {
@@ -589,7 +584,7 @@ export default function AppMobilePage() {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }, 100);
               }}
-              className="flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="flex items-center justify-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.85)",
                 border: `2px solid ${theme.colors.primary}`,
@@ -599,7 +594,7 @@ export default function AppMobilePage() {
             >
               <FaArrowLeft />
               <span>Retour aux projets</span>
-            </motion.button>
+            </button>
           </Link>
         </motion.div>
       </div>
