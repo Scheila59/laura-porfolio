@@ -200,6 +200,14 @@ export default function AMGProject() {
               démontrant ma capacité à résoudre des besoins business concrets en
               cycle de développement complet.
             </p>
+            <p
+              className="text-base italic"
+              style={{ color: theme.colors.text }}
+            >
+              <strong>Projet réalisé en 2023-2024</strong> durant ma formation
+              DWWM (Développeur Web et Web Mobile), dans le cadre de ma
+              reconversion professionnelle vers le développement web.
+            </p>
           </div>
         </motion.div>
         {/* Stack Technique */}
@@ -228,23 +236,21 @@ export default function AMGProject() {
                 className="text-xl font-bold mb-4"
                 style={{ color: theme.colors.primary }}
               >
-                Backend & BDD
+                Backend
               </h3>
               <div className="flex flex-wrap gap-2">
-                {["Symfony", "PHP", "Twig", "MariaDB", "Doctrine ORM"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="px-4 py-2 rounded-full text-sm font-medium"
-                      style={{
-                        backgroundColor: theme.colors.primary + "20",
-                        color: theme.colors.primary,
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
+                {["Symfony", "PHP", "Twig", "Doctrine ORM"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-4 py-2 rounded-full text-sm font-medium"
+                    style={{
+                      backgroundColor: theme.colors.primary + "20",
+                      color: theme.colors.primary,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -274,16 +280,40 @@ export default function AMGProject() {
               </div>
             </div>
 
-            {/* Outils */}
+            {/* Base de données */}
             <div>
               <h3
                 className="text-xl font-bold mb-4"
                 style={{ color: theme.colors.accent }}
               >
-                DevOps & Environnement
+                Base de données
               </h3>
               <div className="flex flex-wrap gap-2">
-                {["Docker", "Docker Compose", "Git"].map((tech) => (
+                {["MariaDB"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-4 py-2 rounded-full text-sm font-medium"
+                    style={{
+                      backgroundColor: theme.colors.accent + "20",
+                      color: theme.colors.accent,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* DevOps & Outils */}
+            <div>
+              <h3
+                className="text-xl font-bold mb-4"
+                style={{ color: theme.colors.accent }}
+              >
+                DevOps & Outils
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["Docker", "Docker Compose", "Git", "DBeaver"].map((tech) => (
                   <span
                     key={tech}
                     className="px-4 py-2 rounded-full text-sm font-medium"
@@ -304,7 +334,7 @@ export default function AMGProject() {
                 className="text-xl font-bold mb-4"
                 style={{ color: theme.colors.accent }}
               >
-                Design & Gestion de projet
+                Design & Gestion
               </h3>
               <div className="flex flex-wrap gap-2">
                 {["Figma", "Notion", "Méthode Agile", "Kanban"].map((tech) => (
@@ -414,6 +444,36 @@ export default function AMGProject() {
             <FaGithub size={24} />
             <span>Voir sur GitHub</span>
           </a>
+        </motion.div>
+        {/* Bouton retour en bas */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2 }}
+          className="flex justify-center mt-12"
+        >
+          <Link href="/#projets">
+            <motion.button
+              onClick={() => {
+                router.push("/#projets");
+                setTimeout(() => {
+                  document
+                    .getElementById("projets")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.85)",
+                border: `2px solid ${theme.colors.primary}`,
+                color: theme.colors.primary,
+                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <FaArrowLeft />
+              <span>Retour aux projets</span>
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </div>
