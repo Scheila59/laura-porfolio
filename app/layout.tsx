@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://laura-beaugrand.com", // TODO: Remplacer par mon URL finale
+    url: "https://laura-beaugrand.vercel.app/",
     title: "Laura Beaugrand | Développeuse Web Full-Stack",
     description:
       "Portfolio interactif avec système de thèmes saisonniers. Découvrez mes projets Symfony, React Native et Next.js.",
     siteName: "Laura Beaugrand Portfolio",
     images: [
       {
-        url: "/og-image.jpg", // TODO: Remplacer par mon image
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Laura Beaugrand - Développeuse Web Full-Stack",

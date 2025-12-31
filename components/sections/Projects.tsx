@@ -21,7 +21,7 @@ const projects = [
       "Figma",
       "DBeaver",
     ],
-    image: "/projects/engins.jpg",
+    image: "projects/engins.jpg",
     link: "https://github.com/Scheila59",
   },
   {
@@ -39,7 +39,7 @@ const projects = [
       "Figma",
       "DBeaver",
     ],
-    image: "/projects/engins.jpg",
+    image: "/appSecret-og.jpg",
     link: "https://github.com/Scheila59",
   },
   {
@@ -55,7 +55,7 @@ const projects = [
       "Framer Motion",
       "Notion",
     ],
-    image: "/projects/portfolio.jpg", // TODO: changer l'image
+    image: "projects/portfolio.jpg",
     link: "https://github.com/Scheila59",
   },
 ];
@@ -120,7 +120,18 @@ export default function Projects() {
                 minHeight: "400px",
               }}
             >
-              <div className="p-5 flex flex-col h-full">
+              {/* Image du projet */}
+              <div
+                className="w-full h-56 bg-center bg-no-repeat border-b-4 overflow-hidden"
+                style={{
+                  backgroundImage: `url('${project.image}')`,
+                  backgroundSize: "100% auto",
+                  borderBottomColor: theme.colors.secondary,
+                }}
+              />
+
+              <div className="p-5 flex flex-col flex-grow">
+                {" "}
                 <h3
                   className="text-2xl font-bold mb-3"
                   style={{ color: theme.colors.primary }}
@@ -133,7 +144,6 @@ export default function Projects() {
                 >
                   {project.description}
                 </p>
-
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span
