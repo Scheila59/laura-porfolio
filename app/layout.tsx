@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio de Laura Beaugrand, développeuse web passionnée. Spécialisée en Symfony, React Native et Next.js. Diplômée CDA et DWWM, je crée des applications web et mobiles modernes et performantes.",
   keywords: [
+    "laura beaugrand",
     "Laura Beaugrand",
     "développeuse web",
     "portfolio",
