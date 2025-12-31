@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import SeasonalParticles from "@/components/theme/SeasonalParticles";
 import { FaArrowLeft, FaGithub, FaPalette } from "react-icons/fa";
 import Link from "next/link";
+import NavigationLink from "@/components/ui/NavigationLink";
 import { useRouter } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -38,31 +39,19 @@ export default function PortfolioProjectPage() {
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Bouton retour */}
-        <Link href="/#projets">
-          <motion.button
-            onClick={() => {
-              router.push("/#projets");
-              setTimeout(() => {
-                document
-                  .getElementById("projets")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }, 100);
-            }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 mb-8 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105"
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.85)",
-              border: `2px solid ${theme.colors.primary}`,
-              color: theme.colors.primary,
-              boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)",
-            }}
-          >
-            <FaArrowLeft />
-            <span className="font-semibold">Retour aux projets</span>
-          </motion.button>
-        </Link>
+        <NavigationLink
+          href="/#projets"
+          className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105"
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.85)",
+            border: `2px solid ${theme.colors.primary}`,
+            color: theme.colors.primary,
+            boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <FaArrowLeft />
+          <span className="font-semibold">Retour aux projets</span>
+        </NavigationLink>
 
         {/* Titre  */}
         <motion.div
@@ -521,28 +510,19 @@ export default function PortfolioProjectPage() {
           </a>
 
           {/* Bouton Retour */}
-          <Link href="/#projets">
-            <button
-              onClick={() => {
-                router.push("/#projets");
-                setTimeout(() => {
-                  document
-                    .getElementById("projets")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }, 100);
-              }}
-              className="flex items-center justify-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105"
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.85)",
-                border: `2px solid ${theme.colors.primary}`,
-                color: theme.colors.primary,
-                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)",
-              }}
-            >
-              <FaArrowLeft />
-              <span>Retour aux projets</span>
-            </button>
-          </Link>
+          <NavigationLink
+            href="/#projets"
+            className="flex items-center justify-center gap-3 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105"
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.85)",
+              border: `2px solid ${theme.colors.primary}`,
+              color: theme.colors.primary,
+              boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            <FaArrowLeft />
+            <span className="font-semibold">Retour aux projets</span>
+          </NavigationLink>
         </motion.div>
       </div>
     </div>

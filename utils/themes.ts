@@ -35,9 +35,7 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
     backgroundImage:
       "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&w=1920",
     gradient: "linear-gradient(135deg, #FFF0F5 0%, #D4F1D4 100%)",
-    cardTexture:
-      // "url('https://www.toptal.com/designers/subtlepatterns/uploads/beige-tiles.png')",
-      "url('/textures/beige-tiles.webp')",
+    cardTexture: "url('/textures/beige-tiles.webp')",
   },
   summer: {
     name: "Été",
@@ -72,9 +70,7 @@ export const seasonThemes: Record<Season, SeasonTheme> = {
     backgroundImage:
       "https://images.pexels.com/photos/1496373/pexels-photo-1496373.jpeg?auto=compress&cs=tinysrgb&w=1920",
     gradient: "linear-gradient(135deg, #FFF0E0 0%, #FFD8A8 50%, #F5DEB3 100%)",
-    cardTexture:
-      // "url('https://www.toptal.com/designers/subtlepatterns/uploads/light-veneer.png')",
-      "url('textures/light-veneer.webp')",
+    cardTexture: "url('textures/light-veneer.webp')",
   },
 
   winter: {

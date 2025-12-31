@@ -27,7 +27,7 @@ function getCurrentSeason(): Season {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [currentSeason, setCurrentSeason] = useState<Season>("spring"); // Défaut serveur
+  const [currentSeason, setCurrentSeason] = useState<Season>("spring");
   const [mounted, setMounted] = useState(false);
 
   // Hydratation côté client

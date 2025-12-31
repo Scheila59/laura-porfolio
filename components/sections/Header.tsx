@@ -27,7 +27,7 @@ export default function Header() {
             className="text-2xl font-bold transition-colors duration-300 hover:opacity-80"
             style={{ color: theme.colors.primary }}
           >
-            {/* tester Laura Beaugrand ou photo de profil en SVG */}
+            {/* // todo: tester avec une photo de profil en SVG */}
             Laura B.
           </NavigationLink>
           <nav className="hidden md:flex items-center gap-8">

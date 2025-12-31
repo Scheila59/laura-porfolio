@@ -96,7 +96,6 @@ export default function SeasonalParticules({
     );
   };
   // printemps
-  // Composant papillons
   // Composant papillon
   const Butterfly = ({
     size,
@@ -135,7 +134,7 @@ export default function SeasonalParticules({
           filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.15))",
         }}
       >
-        {/* Aile supérieure gauche (plus arrondie) */}
+        {/* Aile supérieure gauche */}
         <ellipse
           cx="9"
           cy="11"
@@ -210,7 +209,7 @@ export default function SeasonalParticules({
     );
   };
 
-  // Composant bulle d'eau (été)
+  // Composant bulle d'eau
   const Bubble = ({ size, opacity }: { size: number; opacity: number }) => {
     return (
       <svg
@@ -250,8 +249,9 @@ export default function SeasonalParticules({
     )
       return;
 
-    // Générer les particules initiales avec un timeout
+    // Delai pour éviter les problèmes d'hydratation ssr/client
     const timer = setTimeout(() => {
+      // Nombre de particules selon la saison
       const actualCount =
         season === "spring"
           ? Math.floor(count * 0.5) // Moitié pour le printemps
@@ -261,9 +261,11 @@ export default function SeasonalParticules({
       const initialParticles = Array.from({ length: actualCount }, (_, i) => {
         // Couleurs selon la saison
         let color = "#FFFFFF";
+        // couleurs aléatoires des feuilles d'automne
         if (season === "autumn") {
           const autumnColors = ["#D2691E", "#8B4513", "#CD853F", "#A0522D"];
           color = autumnColors[Math.floor(Math.random() * autumnColors.length)];
+          // Numéro de variante de couleurs pour les papillons
         } else if (season === "spring") {
           color = String(Math.floor(Math.random() * 4));
         }
@@ -291,7 +293,7 @@ export default function SeasonalParticules({
               : season === "spring"
               ? (Math.random() - 0.5) * 0.3
               : season === "summer"
-              ? -(Math.random() * 0.3 + 0.15) // Plus lent : 0.15 à 0.45
+              ? -(Math.random() * 0.3 + 0.15)
               : Math.random() * 1 + 0.5,
           speedX:
             season === "autumn"

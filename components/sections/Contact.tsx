@@ -60,7 +60,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl w-full md:w-auto"
                 style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.95)", // Blanc semi-transparent
+                  backgroundColor: "rgba(255, 255, 255, 0.95)",
                   border: `2px solid ${theme.colors.secondary}`,
                   backgroundImage: `${theme.cardTexture}`,
                   backgroundSize: "auto, cover",
