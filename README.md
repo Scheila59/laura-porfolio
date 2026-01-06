@@ -137,7 +137,7 @@ Ce portfolio ! Projet méta auto-référentiel avec Next.js 14 et animations ava
 
 Le site est déployé sur Vercel :
 
-👉 **[Voir le site en ligne](#)** _(À ajouter après déploiement)_
+👉 **[Voir le site en ligne](https://laura-beaugrand.vercel.app)**
 
 ## 📄 Licence
 
