@@ -34,7 +34,7 @@ declare global {
       job: string[];
       state: Record<string, boolean | string>;
     };
-    dataLayer: Array<Record<string, unknown>>;
+    dataLayer: unknown[];
   }
 }
 
