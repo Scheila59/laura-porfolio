@@ -32,7 +32,9 @@ declare global {
       init: (config: TarteAuCitronConfig) => void;
       user: Record<string, string>;
       job: string[];
+      state: Record<string, boolean | string>;
     };
+    dataLayer: Array<Record<string, unknown>>;
   }
 }
 
@@ -84,6 +86,41 @@ export default function TarteAuCitron() {
         (window.tarteaucitron.job = window.tarteaucitron.job || []).push(
           "googletagmanager"
         );
+
+        // Surveiller les changements d'état de tarteaucitron
+        let lastGtmState: boolean | null = null;
+
+        const updateGoogleConsent = () => {
+          if (!window.tarteaucitron?.state) return;
+
+          window.dataLayer = window.dataLayer || [];
+          const gtmAccepted = window.tarteaucitron.state.googletagmanager === true;
+
+          // Ne mettre à jour que si l'état a changé
+          if (gtmAccepted === lastGtmState) return;
+          lastGtmState = gtmAccepted;
+
+          // Méthode pour Consent Mode v2
+          function gtag(...args: unknown[]) {
+            window.dataLayer.push(args);
+          }
+          gtag("consent", "update", {
+            analytics_storage: gtmAccepted ? "granted" : "denied",
+            ad_storage: gtmAccepted ? "granted" : "denied",
+            ad_user_data: gtmAccepted ? "granted" : "denied",
+            ad_personalization: gtmAccepted ? "granted" : "denied",
+          });
+
+          console.log(
+            `🍪 Consentement Google mis à jour: ${gtmAccepted ? "✅ Accepté" : "❌ Refusé"}`
+          );
+        };
+
+        // Vérifier régulièrement l'état (toutes les 500ms)
+        const consentChecker = setInterval(updateGoogleConsent, 500);
+
+        // Nettoyer après 30 secondes (l'utilisateur aura fait son choix)
+        setTimeout(() => clearInterval(consentChecker), 30000);
       }
     };
 
