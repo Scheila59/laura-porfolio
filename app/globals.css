@@ -128,3 +128,132 @@ html {
 .animate-float-leaves {
   animation: float-leaves ease-in-out infinite;
 }
+
+/* 🍪 TARTEAUCITRON - Style personnalisé minimaliste */
+#tarteaucitronRoot {
+  font-family: inherit !important;
+}
+
+/* Bannière principale */
+#tarteaucitronAlertBig {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  padding: 2rem !important;
+  max-width: 600px !important;
+}
+
+#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert {
+  color: #333 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Boutons - COULEUR PRIMAIRE ICI SEULEMENT */
+.tarteaucitronAllow,
+.tarteaucitronDeny {
+  border-radius: 8px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin: 0 6px !important;
+}
+
+/* Bouton "Tout accepter" avec couleur primaire */
+.tarteaucitronAllow {
+  background: var(--tac-primary, #9370db) !important;
+  color: white !important;
+}
+
+.tarteaucitronAllow:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px var(--tac-primary-shadow, rgba(147, 112, 219, 0.3)) !important;
+  opacity: 0.9 !important;
+}
+
+/* Bouton "Tout refuser" en gris */
+.tarteaucitronDeny {
+  background: #f5f5f5 !important;
+  color: #666 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.tarteaucitronDeny:hover {
+  background: #e8e8e8 !important;
+}
+
+/* Liens dans la bannière */
+#tarteaucitronAlertBig a {
+  color: var(--tac-primary, #9370db) !important;
+  text-decoration: underline !important;
+  font-weight: 500 !important;
+}
+
+#tarteaucitronAlertBig a:hover {
+  opacity: 0.8 !important;
+}
+
+/* Icône flottante */
+#tarteaucitronIcon {
+  background: var(--tac-primary, #9370db) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease !important;
+}
+
+#tarteaucitronIcon:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Panel de gestion - FOND NEUTRE */
+#tarteaucitron {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+/* Titres du panel en neutre */
+#tarteaucitron .tarteaucitronTitle {
+  color: #333 !important;
+  font-weight: 700 !important;
+}
+
+/* Indicateurs ON/OFF - TRÈS DISCRETS, PAS DE COULEUR */
+.tarteaucitronIsAllowed,
+.tarteaucitronIsDenied {
+  border-radius: 4px !important;
+  font-size: 0.8rem !important;
+  padding: 4px 10px !important;
+  background: transparent !important;
+  border: 1px solid #ddd !important;
+  color: #666 !important;
+  font-weight: 500 !important;
+}
+
+/* Juste une bordure légèrement plus foncée pour "accepté" */
+.tarteaucitronIsAllowed {
+  border-color: #999 !important;
+  color: #333 !important;
+}
+
+/* Lignes de services dans le panel */
+.tarteaucitronLine {
+  border-bottom: 1px solid #f5f5f5 !important;
+  padding: 12px 0 !important;
+}
+
+/* Nom des services */
+.tarteaucitronName {
+  font-weight: 500 !important;
+  color: #333 !important;
+  font-size: 0.95rem !important;
+}

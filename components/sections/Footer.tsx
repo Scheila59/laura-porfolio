@@ -2,6 +2,7 @@
 
 import { useTheme } from "@/hooks/useTheme";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   const { theme } = useTheme();
@@ -39,12 +40,21 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Texte copyright */}
-          <p
-            className="text-sm md:text-base"
-            style={{ color: theme.colors.text }}
-          >
-            © {currentYear} Laura Beaugrand. Tous droits réservés.
-          </p>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <p
+              className="text-sm md:text-base"
+              style={{ color: theme.colors.text }}
+            >
+              © {currentYear} Laura Beaugrand. Tous droits réservés.
+            </p>
+            <Link
+              href="/politique-confidentialite"
+              className="text-xs md:text-sm hover:underline transition-all"
+              style={{ color: theme.colors.primary }}
+            >
+              Politique de confidentialité
+            </Link>
+          </div>
 
           {/* Liens sociaux */}
           <div className="flex gap-4">

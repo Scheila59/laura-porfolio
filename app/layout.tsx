@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/useTheme";
-import { GoogleTagManager } from "@next/third-parties/google";
+import TarteAuCitron from "@/components/TarteAuCitron";
 
 export const metadata: Metadata = {
   title: {
@@ -67,9 +67,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
-
-        <GoogleTagManager gtmId="GTM-WWZ4Q52H" />
+        <ThemeProvider>
+          {children}
+          <TarteAuCitron />
+        </ThemeProvider>
       </body>
     </html>
   );
